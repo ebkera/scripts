@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Times" > times.era
+for f in */; do
+  cd $f
+  time=$(grep wall TIMES | cut -d = -f 2)
+  calc=$(echo $f | cut -d ^ -f 1)
+  echo "$calc: $time" >> ../times.era
+  cd ..
+done
