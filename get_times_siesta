@@ -12,4 +12,4 @@ for f in */; do
   echo "$calc: $wallt  $cput" >> ../times.era
   cd ..
 done
-echo "Done.. find file ./times.era"
+echo "Done.. find file: ./times.era"
