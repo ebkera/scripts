@@ -2,7 +2,7 @@
 
 echo "SIESTA caclculation times" > times.era
 echo "Calc: wall_time  cpu_time" >> times.era
-echo "Getting CPU and wall times from all runs in current dir..." >> times.era
+echo "Getting CPU and wall times from all runs in current dir..." >>
 for f in */; do
   cd $f
   calc=$(echo $f | cut -d ^ -f 1)
