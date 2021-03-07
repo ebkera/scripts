@@ -1,0 +1,42 @@
+BIN_DIR=$HOME/bin
+CUR_DIR=($pwd)
+INS_DIR=/opt
+DEB_DIR=$HOME/debs
+
+echo "Updating files in $HOME/bin/ and $ 
+
+
+if [ ! -d $BIN_DIR ] 
+then
+    mkdir $BIN_DIR
+    echo "  Directory $BIN_DIR did not exist and was created..."
+fi
+echo "  Find your own binaries, executables and scripts in $BIN_DIR"
+
+if [ ! -d $INS_DIR ] 
+then
+    mkdir $INS_DIR
+    echo "  Directory $INS_DIR did not exist and was created..."
+fi
+echo "  Find  installed apps in $INS_DIR"
+
+if [ ! -d $DEB_DIR ] 
+then
+    mkdir $DEB_DIR
+    echo "  Directory $DEB_DIR did not exist and was created..."
+fi
+
+echo "  Find $DEB_DIR. Feel free to delete"
+
+echo "Getting script files"
+echo "  -Git cloning script files to $DEB_DIR/scripts"
+sudo git clone https://github.com/ebkera/scripts.git $DEB_DIR/scripts
+echo "  -Copying nautilus script files to $HOME/.local/share/nautilus/scripts"
+sudo cp $DEB_DIR/scripts/nautilus_scripts/* $HOME/.local/share/nautilus/scripts/
+sudo chmod +x -R $HOME/.local/share/nautilus/scripts/
+echo "  -Copying bin script files to $BIN_DIR/scripts"
+sudo cp $DEB_DIR/scripts/bin_scripts/* $BIN_DIR/
+sudo chmod +x -R $BIN_DIR/
+echo "  -Cleaning up"
+sudo rm -r $DEB_DIR/scripts
+echo "Done"
