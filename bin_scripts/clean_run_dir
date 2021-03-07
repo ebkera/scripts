@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Cleaning up current directory... "
+
+rm *job
+rm *bat
+rm *sh
+rm *swp
