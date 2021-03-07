@@ -1,9 +1,0 @@
-#!/bin/bash
-# This will load the siesta/4.1-b2/impi-5/intel-16/4.1-b2-2
-module purge
-module load intel/16
-module load impi/5
-module load siesta/4.1-b2/impi-5/intel-16/4.1-b2-1
-
-echo "The following SIESTA version has been loaded: siesta/4.1-b2/impi-5/intel-16/4.1-b2-2"
-module list
