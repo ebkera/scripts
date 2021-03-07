@@ -5,7 +5,6 @@ DEB_DIR=$HOME/debs
 
 echo "Updating files in $HOME/bin/ and $HOME/.local/share/nautilus/scripts/" 
 
-
 if [ ! -d $BIN_DIR ] 
 then
     mkdir $BIN_DIR
