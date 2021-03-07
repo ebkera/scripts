@@ -1,0 +1,2 @@
+#!/bin/bash
+rsync -avtuz -e "ssh -p 33301" rathnayake@localhost:~/Run_files/ligands_denchar_11/$1/*WF$2* ./
