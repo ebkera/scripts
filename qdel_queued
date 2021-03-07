@@ -1,2 +1,0 @@
-#!/bin/bash
-qstat -u $LOGNAME | grep "Q" |  grep "^[0-9].*" | cut -d"." -f1 | xargs qdel
