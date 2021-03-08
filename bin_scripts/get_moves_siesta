@@ -1,5 +1,5 @@
 #!/bin/bash
-get_from_run_dir_siesta_master "Res_force"
+get_from_run_dir_siesta_master "Moves"
 
 #echo "Logging all MD moves" > md_moves.era
 #echo "Logging all MD moves"
