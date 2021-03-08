@@ -14,6 +14,7 @@
 #fi
 
 #Init if statements
+echo $0
 if [ "$0" == "Tot_force" ]; then
     file_name="md_forces.era"
     mes="Logging all Total MD forces per MD step"
