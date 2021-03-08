@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# argument format: 
+#  $0: grep_for  # defines the action 
+#  $1: file_name_to_write
+#  
+
+#
+#if [ "$0" != "" ]; then
+#    file_name="md_forces.era"
+#    mes="Logging all Total MD forces per MD step"
+#else
+#    echo "Positional parameter 1 is empty"
+#fi
+
+#Init if statements
+if [ "$0" == "Tot_force" ]; then
+    file_name="md_forces.era"
+    mes="Logging all Total MD forces per MD step"
+fi
+
+if [ "$0" == "Res_force" ]; then
+    file_name="md_resforces.era"
+    mes="Logging all resolutions for MD forces"
+fi
+
+if [ "$0" == "Times" ]; then
+    file_name="times.era"
+    mes="Logging all times for MD forces"
+fi
+
+
+# Intitialize to overwrite file here
+echo $mes > ../${file_name}
+
+for f in */ ; do
+  cd $f
+  echo "Now looking in $f" | tee -a ../${file_name}
+  
+  #Init if statements
+  if [ "$0" == "Tot_force" ]; then
+    var=$(grep "Tot   " *out)
+    echo "$var" | tee -a ../${file_name}  
+  fi
+  
+  if [ "$0" == "Res_force" ]; then
+    var=$(grep "Res" *out)
+    echo "$var" | tee -a ../${file_name}
+  fi
+
+  if [ "$0" == "Times" ]; then
+    calc=$(echo $f | cut -d ^ -f 1)
+    wallt=$(grep wall TIMES | tr -s ' ' | cut -d = -f 2)
+    cput=$(grep Calc: TIMES | cut -d = -f 2 | tr -s ' ' | cut -d ' ' -f 2)
+    echo "$calc: $wallt  $cput" | tee -a ../${file_name}
+  fi
+  
+  cd ..
+done
+
+
+echo "" | tee -a ../${file_name}
+echo "Find the file ./${file_name}"
+
+#Specific End Messages
+if [ "$0" == "Tot_force" ]; then
+  echo "Look for 'siesta:    Tot'  to see if converged" | tee -a ../${file_name}
+fi
+
+if [ "$0" == "Res_force" ]; then
+  echo "" | tee -a ../${file_name}
+fi
+
+if [ "$0" == "Times" ]; then
+  echo "" | tee -a ../${file_name}
+fi
+
+
+echo "" | tee -a ../${file_name}
+echo "Done" | tee -a ../${file_name}
