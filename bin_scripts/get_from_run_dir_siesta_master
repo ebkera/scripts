@@ -28,7 +28,7 @@ fi
 if [ "$1" == "Times" ]; then
     file_name="times.era"
     mes="SIESTA caclculation times"
-    mes="${mes}\nCalc: wall_time  cpu_time"
+    mes=$"${mes}\nCalc: wall_time  cpu_time"
 fi
 
 
