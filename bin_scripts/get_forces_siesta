@@ -17,3 +17,4 @@ for f in */ ; do
 done
 
 echo "Find the file ./${file_name}"
+echo "Look for 'siesta:    Tot'  to see if converged"
