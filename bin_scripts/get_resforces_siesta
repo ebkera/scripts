@@ -3,17 +3,14 @@
 file_name="md_resforces.era"
 mes="Logging all resolutions for MD forces"
 
-echo $mes > ${file_name}
-echo $mes
+echo $mes | tee -a ../${file_name}
 
 for f in */ ; do
   cd $f
-  echo "Now looking in $f"
-  echo "Now looking in $f" >> ../${file_name}
+  echo "Now looking in $f" | tee -a ../${file_name}
   var=$(grep "Res" *out)
-  echo "$var" >> ../${file_name}
-  echo "$var"
+  echo "$var" | tee -a ../${file_name}
   cd ..
 done
-
+echo "" | tee -a ../${file_name}
 echo "Find the file ./${file_name}"
