@@ -10,7 +10,7 @@ for f in */ ; do
   cd $f
   echo "Now looking in $f"
   echo "Now looking in $f" >> ../${file_name}
-  var=$(grep "Atomic forces" *out)
+  var=$(grep "Tot   " *out)
   echo "$var" >> ../${file_name}
   echo "$var"
   cd ..
