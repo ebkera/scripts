@@ -37,15 +37,16 @@ echo $mes > ../${file_name}
 # The for loop
 for f in */ ; do
   cd $f
-  echo "Now looking in $f" | tee -a ../${file_name}
   
   #Init if statements
   if [ "$1" == "Tot_force" ]; then
+    echo "Now looking in $f" | tee -a ../${file_name}
     var=$(grep "Tot   " *out)
     echo "$var" | tee -a ../${file_name}  
   fi
   
   if [ "$1" == "Res_force" ]; then
+    echo "Now looking in $f" | tee -a ../${file_name}
     var=$(grep "Res" *out)
     echo "$var" | tee -a ../${file_name}
   fi
