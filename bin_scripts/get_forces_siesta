@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_name="md_moves.era"
+file_name="md_forces.era"
 mes="Logging all Total MD forces per MD step"
 
 echo $mes > ${file_name}
