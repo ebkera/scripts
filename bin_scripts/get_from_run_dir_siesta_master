@@ -14,18 +14,18 @@
 #fi
 
 #Init if statements
-echo $0
-if [ "$0" == "Tot_force" ]; then
+echo $1
+if [ "$1" == "Tot_force" ]; then
     file_name="md_forces.era"
     mes="Logging all Total MD forces per MD step"
 fi
 
-if [ "$0" == "Res_force" ]; then
+if [ "$1" == "Res_force" ]; then
     file_name="md_resforces.era"
     mes="Logging all resolutions for MD forces"
 fi
 
-if [ "$0" == "Times" ]; then
+if [ "$1" == "Times" ]; then
     file_name="times.era"
     mes="Logging all times for MD forces"
 fi
@@ -40,17 +40,17 @@ for f in */ ; do
   echo "Now looking in $f" | tee -a ../${file_name}
   
   #Init if statements
-  if [ "$0" == "Tot_force" ]; then
+  if [ "$1" == "Tot_force" ]; then
     var=$(grep "Tot   " *out)
     echo "$var" | tee -a ../${file_name}  
   fi
   
-  if [ "$0" == "Res_force" ]; then
+  if [ "$1" == "Res_force" ]; then
     var=$(grep "Res" *out)
     echo "$var" | tee -a ../${file_name}
   fi
 
-  if [ "$0" == "Times" ]; then
+  if [ "$1" == "Times" ]; then
     calc=$(echo $f | cut -d ^ -f 1)
     wallt=$(grep wall TIMES | tr -s ' ' | cut -d = -f 2)
     cput=$(grep Calc: TIMES | cut -d = -f 2 | tr -s ' ' | cut -d ' ' -f 2)
@@ -65,15 +65,15 @@ echo "" | tee -a ../${file_name}
 echo "Find the file ./${file_name}"
 
 #Specific End Messages
-if [ "$0" == "Tot_force" ]; then
+if [ "$1" == "Tot_force" ]; then
   echo "Look for 'siesta:    Tot'  to see if converged" | tee -a ../${file_name}
 fi
 
-if [ "$0" == "Res_force" ]; then
+if [ "$1" == "Res_force" ]; then
   echo "" | tee -a ../${file_name}
 fi
 
-if [ "$0" == "Times" ]; then
+if [ "$1" == "Times" ]; then
   echo "" | tee -a ../${file_name}
 fi
 
