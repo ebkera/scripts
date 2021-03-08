@@ -1,16 +1,17 @@
 #!/bin/bash
+get_from_run_dir_siesta_master "Res_force"
 
-echo "Logging all MD moves" > md_moves.era
-echo "Logging all MD moves"
+#echo "Logging all MD moves" > md_moves.era
+#echo "Logging all MD moves"
 
-for f in */ ; do
-  cd $f
-  echo "Now looking in $f"
-  echo "Now looking in $f" >> ../md_moves.era
-  moves=$(grep move *out)
-  echo "$moves" >> ../md_moves.era
-  echo "$moves"
-  cd ..
-done
-
-echo "Find the file ./md_moves.era" 
+#for f in */ ; do
+#  cd $f
+#  echo "Now looking in $f"
+#  echo "Now looking in $f" >> ../md_moves.era
+#  moves=$(grep move *out)
+#  echo "$moves" >> ../md_moves.era
+#  echo "$moves"
+#  cd ..
+#done
+#
+#echo "Find the file ./md_moves.era" 
