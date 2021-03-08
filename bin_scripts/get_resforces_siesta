@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$file_name="md_resforces.era"
+file_name="md_resforces.era"
 mes="Logging all resolutions for MD forces"
 
 echo $mes > ${file_name}
