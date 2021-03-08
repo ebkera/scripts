@@ -3,18 +3,15 @@
 file_name="md_forces.era"
 mes="Logging all Total MD forces per MD step"
 
-echo $mes > ${file_name}
-echo $mes
+echo $mes | tee -a ../${file_name}
 
 for f in */ ; do
   cd $f
-  echo "Now looking in $f"
-  echo "Now looking in $f" >> ../${file_name}
+  echo "Now looking in $f" | tee -a ../${file_name}
   var=$(grep "Tot   " *out)
-  echo "$var" >> ../${file_name}
-  echo "$var"
+  echo "$var" | tee -a ../${file_name}
   cd ..
 done
-
+echo "" | tee -a ../${file_name}
 echo "Find the file ./${file_name}"
-echo "Look for 'siesta:    Tot'  to see if converged"
+echo "Look for 'siesta:    Tot'  to see if converged" | tee -a ../${file_name}
