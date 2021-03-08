@@ -72,23 +72,21 @@ for f in */ ; do
   cd ..
 done
 
-
-echo "" | tee -a ../${file_name}
+echo "" | tee -a ./${file_name}
 echo "Find the file ./${file_name}"
 
 #Specific End Messages
 if [ "$1" == "Tot_force" ]; then
-  echo "Look for 'siesta:    Tot'  to see if converged" | tee -a ../${file_name}
+  echo "Look for 'siesta:    Tot'  to see if converged" | tee -a ./${file_name}
 fi
 
 if [ "$1" == "Res_force" ]; then
-  echo "" | tee -a ../${file_name}
+  echo "" | tee -a ./${file_name}
 fi
 
 if [ "$1" == "Times" ]; then
-  echo "" | tee -a ../${file_name}
+  echo "" | tee -a ./${file_name}
 fi
 
-
-echo "" | tee -a ../${file_name}
-echo "Done" | tee -a ../${file_name}
+echo "" | tee -a ./${file_name}
+echo "Done" | tee -a ./${file_name}
