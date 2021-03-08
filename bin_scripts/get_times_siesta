@@ -1,15 +1,16 @@
 #!/bin/bash
+get_from_run_dir_siesta_master "Times"
 
-echo "SIESTA caclculation times" > times.era
-echo "Calc: wall_time  cpu_time" >> times.era
-echo "Getting CPU and wall times from all runs in current dir..." >>
-for f in */; do
-  cd $f
-  calc=$(echo $f | cut -d ^ -f 1)
-  echo "Now looking in $calc..."
-  wallt=$(grep wall TIMES | tr -s ' ' | cut -d = -f 2)
-  cput=$(grep Calc: TIMES | cut -d = -f 2 | tr -s ' ' | cut -d ' ' -f 2)
-  echo "$calc: $wallt  $cput" >> ../times.era
-  cd ..
-done
-echo "Done.. find file: ./times.era"
+#echo "SIESTA caclculation times" > times.era
+#echo "Calc: wall_time  cpu_time" >> times.era
+#echo "Getting CPU and wall times from all runs in current dir..." >>
+#for f in */; do
+#  cd $f
+#  calc=$(echo $f | cut -d ^ -f 1)
+#  echo "Now looking in $calc..."
+#  wallt=$(grep wall TIMES | tr -s ' ' | cut -d = -f 2)
+#  cput=$(grep Calc: TIMES | cut -d = -f 2 | tr -s ' ' | cut -d ' ' -f 2)
+#  echo "$calc: $wallt  $cput" >> ../times.era
+#  cd ..
+#done
+#echo "Done.. find file: ./times.era"
