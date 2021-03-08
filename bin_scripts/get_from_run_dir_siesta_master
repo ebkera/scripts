@@ -14,7 +14,7 @@
 #fi
 
 #Init if statements
-echo $1
+
 if [ "$1" == "Tot_force" ]; then
     file_name="md_forces.era"
     mes="Logging all Total MD forces per MD step"
@@ -32,9 +32,9 @@ fi
 
 
 # Intitialize to overwrite file here
-echo "${file_name} here"
 echo $mes > ../${file_name}
 
+# The for loop
 for f in */ ; do
   cd $f
   echo "Now looking in $f" | tee -a ../${file_name}
