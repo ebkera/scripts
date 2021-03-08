@@ -31,6 +31,10 @@ if [ "$1" == "Times" ]; then
     mes=$"${mes}\nCalc: wall_time  cpu_time"
 fi
 
+if [ "$1" == "Moves" ]; then
+    file_name="moves.era"
+    mes="Logging all MD moves"
+fi
 
 # Intitialize to overwrite file here
 echo $mes > ../${file_name}
@@ -58,6 +62,12 @@ for f in */ ; do
     cput=$(grep Calc: TIMES | cut -d = -f 2 | tr -s ' ' | cut -d ' ' -f 2)
     echo "$calc: $wallt  $cput" | tee -a ../${file_name}
   fi
+  
+  if [ "$1" == "Moves" ]; then
+    echo "Now looking in $f" | tee -a ../${file_name}
+    var=$(grep move *out)
+    echo "$var" | tee -a ../${file_name}
+  fi  
   
   cd ..
 done
