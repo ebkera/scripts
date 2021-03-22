@@ -1,0 +1,12 @@
+#!/bin/bash
+
+status=$1
+sudo su
+
+if [ "$1" == "on" ]; then
+    echo 1 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode
+    echo "Battery conservation turned on"
+else
+    echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode
+    echo "Battery conservation turned off"
+fi
