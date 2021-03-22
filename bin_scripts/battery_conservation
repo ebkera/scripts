@@ -10,3 +10,6 @@ else
     echo 0 > /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode
     echo "Battery conservation turned off"
 fi
+
+echo "File status: "
+cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004\:00/conservation_mode
