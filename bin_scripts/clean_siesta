@@ -23,3 +23,12 @@ rm *STRESS*
 rm *yml*
 rm *ENTHALPY*
 rm *FA*
+rm *ANI
+rm *CG
+rm *PLD
+rm *RHO
+rm *WFSX
+rm *MD
+rm *MD_CAR
+rm *MDE
+rm *NEXT_ITER
