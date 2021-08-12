@@ -34,6 +34,7 @@ rm *MDE
 rm *NEXT_ITER
 rm *HSX
 rm *DIM
+rm *NORMAL_EXIT
 
 echo "Done cleaning..."
 echo "INPUT_TMP* files are left alone to keep track of previous runs"
