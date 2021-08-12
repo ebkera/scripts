@@ -32,3 +32,8 @@ rm *MD
 rm *MD_CAR
 rm *MDE
 rm *NEXT_ITER
+rm *HSX
+rm *DIM
+
+echo "Done cleaning..."
+echo "INPUT_TMP* files are left alone to keep track of previous runs"
