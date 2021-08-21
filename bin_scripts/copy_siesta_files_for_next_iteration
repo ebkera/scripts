@@ -23,5 +23,5 @@ if [ -z "$is_usestruct_present_in_file" ]; then
 echo "UseStructFile true" >> "${f_name}.fdf"
 fi
 
-echo "Copied: .out, .STRUCT_OUT, .ANI files"
+echo "Copied: .out, .STRUCT_OUT, .ANI, .fdf files"
 echo "Also copied STRUCT_OUT to STRUCT_IN"
