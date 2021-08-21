@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cur_dir=$(pwd)
+echo "Current directory is: "
 echo "$cur_dir"
 f_name=$(echo "$cur_dir" | cut -d '^' -f 1)
 echo "File name detected to be: ${f_name}
