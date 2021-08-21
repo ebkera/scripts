@@ -15,7 +15,7 @@ read it_num
 #read f_name
 
 cp *out "${f_name}.out_$it_num"
-cp "${f_name}.fdf" "${f_name}.out_$it_num"
+cp "${f_name}.fdf" "${f_name}.fdf_$it_num"
 cp *STRUCT_OUT "${f_name}.STRUCT_OUT_$it_num"
 cp *STRUCT_OUT "${f_name}.STRUCT_IN"
 cp *ANI "${f_name}.ANI_$it_num"
