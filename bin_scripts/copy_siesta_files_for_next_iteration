@@ -23,7 +23,10 @@ cp *ANI "${f_name}.ANI_$it_num"
 is_usestruct_present_in_file=$(grep "UseStructFile" "${f_name}.fdf")
 
 if [ -z "$is_usestruct_present_in_file" ]; then
+echo "" >> "${f_name}.fdf"
+echo "# This line was added by the copy_siesta_files_for_next_iteration script in /bin" >> "${f_name}.fdf"
 echo "UseStructFile true" >> "${f_name}.fdf"
+echo "" >> "${f_name}.fdf"
 fi
 
 echo "Copied: .out, .STRUCT_OUT, .ANI, .fdf files"
