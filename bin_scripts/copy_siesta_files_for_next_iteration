@@ -27,6 +27,8 @@ echo "" >> "${f_name}.fdf"
 echo "# This line was added by the copy_siesta_files_for_next_iteration script in /bin" >> "${f_name}.fdf"
 echo "UseStructFile true" >> "${f_name}.fdf"
 echo "" >> "${f_name}.fdf"
+else
+echo "The .fdf file already has UseStructFile set to true"
 fi
 
 echo "Copied: .out, .STRUCT_OUT, .ANI, .fdf files"
