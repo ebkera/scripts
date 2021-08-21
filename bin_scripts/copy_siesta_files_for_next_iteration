@@ -12,8 +12,16 @@ read it_num
 #read f_name
 
 cp *out "${f_name}.out_$it_num"
+cp "${f_name}.fdf" "${f_name}.out_$it_num"
 cp *STRUCT_OUT "${f_name}.STRUCT_OUT_$it_num"
 cp *STRUCT_OUT "${f_name}.STRUCT_IN"
 cp *ANI "${f_name}.ANI_$it_num"
+
+is_usestruct_present_in_file=$(grep "UseStructFile" "${f_name}.fdf")
+
+if [ -z "$is_usestruct_present_in_file" ]; then
+echo "UseStructFile true" >> "${f_name}.fdf"
+fi
+
 echo "Copied: .out, .STRUCT_OUT, .ANI files"
 echo "Also copied STRUCT_OUT to STRUCT_IN"
