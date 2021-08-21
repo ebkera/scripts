@@ -1,8 +1,6 @@
 #!/bin/bash
 
 cur_dir=$(pwd)
-echo "Current directory is: "
-echo "$cur_dir"
 f_name=$(echo "$cur_dir" | cut -d '^' -f 1)
 f_name=$(echo "$f_name" | rev | cut -d'/' -f 1 | rev)
 
