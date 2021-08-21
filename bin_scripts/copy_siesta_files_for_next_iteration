@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cur_dir=$(pwd)
+echo "$cur_dir"
+f_name=$(echo "$cur_dir" | cut -d '^' -f 1)
+echo "File name detected to be: ${f_name}
+
+echo "Enter interation number: "
+read it_num
+
+#echo "Enter file name: "
+#read f_name
+
+cp *out "${f_name}.out_$it_num"
+cp *STRUCT_OUT "${f_name}.STRUCT_OUT_$it_num"
+cp *STRUCT_OUT "${f_name}.STRUCT_IN"
+cp *ANI "${f_name}.ANI_$it_num"
+echo "Copied: .out, .STRUCT_OUT, .ANI files"
+echo "Also copied STRUCT_OUT to STRUCT_IN"
